@@ -1,0 +1,997 @@
+<html xmlns:ganttproject="http://ganttproject.sf.net/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GanttProject - Plan_de_projet</title>
+<style>
+	    A:link {
+		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
+		FONT-SIZE: 14px ; COLOR: black;
+	    }
+	    A:visited {
+		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
+		FONT-SIZE: 14px ; COLOR: black; BACKGROUND: none
+	    }
+	    A:hover {
+		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
+		FONT-SIZE: 14px ; COLOR: white ; BACKGROUND: #6d9ec6;
+	    }
+	    .notes {
+	      padding-left: 10px;
+	    }
+	    .notes pre {
+	      font-family: Arial, Helvetica;
+	      font-size: 10px;
+	      margin-top: 0px;
+	      padding-top: 0px;
+	      margin-bottom: 5px;
+	    }
+	    .attachment {
+	      padding-left: 10px;
+	    }
+	    .attachment a:link {
+	      font-weight: normal;
+	      font-size: 12px;
+	      color: #6d9ec6;
+	      background: white;
+	    }
+	    .attachment a:hover {
+	      font-weight: normal;
+	      text-decoration: underline;
+	      font-size: 12px;
+	      color: #6d9ec6;
+	      background: white;
+	    }
+	    .attachment a:visited {
+	      font-weight: normal;
+	      font-size: 12px;
+	      background: white;
+	      color: gray;
+	    }
+	    TD {
+		FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+	    }
+	    UL {
+		FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+	    }
+	    LI {
+		FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+	    }
+	    H1 {
+		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #6d9ec6;
+	    }
+	    H2 {
+		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #000000;
+	    }
+	    H3 {
+		FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #6d9ec6;
+	    }
+	    H4 {
+		FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000;
+	    }
+	    H5 {
+		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #6d9ec6;
+	    }
+	    H6 {
+		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000
+	    }
+
+	    </style>
+</head>
+<body bgcolor="white">
+<center>
+<style>
+div.project_name {
+  font-size: 150%;
+  color: black;
+  font-weight: bold;
+  border-top: solid #6d9ec6 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+}
+div.page_links {
+  background: #6d9ec6;
+  text-align: center;
+}
+</style>
+<center>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td bgcolor="#dddddd">
+<div class="project_name">Smarty-Light</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="page_links">
+<a href="Plan_de_projet.html"></a>  |
+          <a href="Plan_de_projet-chart.html">Gantt</a> |
+          <a href="Plan_de_projet-tasks.html">Tasks</a> |
+          <a href="Plan_de_projet-resources.html">Resources</a>
+</div>
+</td>
+</tr>
+</table>
+</center>
+<br>
+<style>
+td.header {
+  background: #dddddd;
+  margin: 0;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 2px;
+  padding-bottom:1px;
+  border-bottom: solid black 2px;
+}
+td.cell {
+  margin: 0;
+  margin-top: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 2px;
+  padding-bottom:1px;
+}
+div.cell {
+}
+h5.header {
+  margin-left: 2px;
+  margin-top: 2px;
+}
+</style>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" class="header">
+<h5 class="header">Name</h5>
+</td><td valign="top" class="header">
+<h5 class="header">Begin date</h5>
+</td><td valign="top" class="header">
+<h5 class="header">End date</h5>
+</td><td valign="top" class="header">
+<h5 class="header">Heures</h5>
+</td><td valign="top" class="header">
+<h5 class="header">Livrable</h5>
+</td><td valign="top" class="header">
+<h5 class="header">Resources</h5>
+</td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0em">
+<div style="margin: 0; padding: 0;">Plan de projet</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Plan de projet v1.0</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Explication du projet</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">4h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Explication du projet</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Diagramme de gantt</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">4h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0em">
+<div style="margin: 0; padding: 0;">Planification du budget</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">07/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Budget</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sch&eacute;matisation &eacute;lectrique de l'ampoule</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sch&eacute;ma &eacute;lectrique</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Inventaires des composantes requises</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Liste exhaustive des composantes</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Recherche du microcontr&ocirc;leur id&eacute;al</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur le microcontr&ocirc;leur</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Choix de l'ampoule</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur les contraintes physiques</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Choix des LEDs</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur la th&eacute;orie de la lumi&egrave;re</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Choix des transistors</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">07/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Remise de la liste des composantes &agrave; commander</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0em">
+<div style="margin: 0; padding: 0;">Recherche, d&eacute;veloppement et documentation</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">25/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">90h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Assemblage du circuit Alpha</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">07/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">14/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Test des r&eacute;sistances et transistors avec un arduino PWM</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">07/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">14/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Hardware</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">29/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">25h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Ampoule</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Assemblage du circuit &eacute;lectrique</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">23h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur les &eacute;tapes du montage (Photos, emb&ucirc;ches, etc.)</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Pose du transformateur sur les connecteurs de l'ampoule</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">3h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur le fonctionnement du transformateur</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Lien entre le transformateur et le microcontr&ocirc;leur</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">5h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur l'agencement des potentiels</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Connexions du circuit aux composantes (LEDs, Transitors,etc.)</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur le fonctionnement des transitors de biais avec les "pins" du microcontr&ocirc;lleur</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">R&eacute;daction d'un guide expliquant comment reproduire l'ampoule</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/02/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">5h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">How-to explicatif</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">D&eacute;montage de l'ampoule</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">27/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">29/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Software</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">25/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">65h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">API, microcontr&ocirc;lleur, serveur web et application web</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">D&eacute;termination du sch&eacute;ma de communication</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">3h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sch&eacute;ma de communication exhaustif</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">D&eacute;termination des technologies &agrave; utiliser</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur le choix des technologies</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Impl&eacute;mentation du serveur de communication (API)</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">25/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">API, documentation pour notre API</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Sch&eacute;matisation des diff&eacute;rentes routes de requ&ecirc;tes</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur les requ&ecirc;tes et les routes</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Cr&eacute;ation des routes pour les diff&eacute;rentes requ&ecirc;tes</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">3h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Apprentissage des langages ou technologies et programmation</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">03/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">25/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">15h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Impl&eacute;mentation de l'application web</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Application web fonctionnelle</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Design d'interface utilisateur (Application web)</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">3h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sch&eacute;ma UX (Papier crayon)</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Feuilles de style CSS</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">5h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Programmation fonctionnalit&eacute;es et communication avec le API</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur le fonctionnement de la communication</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Tests d'utilisateurs (externes au projet)</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">17/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">24/04/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">1h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Rapport de UX</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Programmation du microcontr&ocirc;leur</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">31/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Microcontr&ocirc;leur fonctionnel avec le API</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Communication avec les LEDs</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">27/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">3h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Communication du microcontr&ocirc;lleur avec le API</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">31/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">15h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation sur le fonctionnement de la communication</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1.5em">
+<div style="margin: 0; padding: 0;">Beta testing</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">20/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">31/03/17</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">2h00</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;"></div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+</table>
+</center>
+<br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#6d9ec6" width="50%"><font color="#FFFFFF"><b>Ganttproject (2.8.1 Pilsen (build 2024))</b></font></td><td bgcolor="#6d9ec6" width="50%" align="right"><b><a href="http://ganttproject.biz">ganttproject.biz</a></b>
+<br>
+<b>03/03/17 - 11:28:21 AM</b></td>
+</tr>
+</table>
+</body>
+</html>
