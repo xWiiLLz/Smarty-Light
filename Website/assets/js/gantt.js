@@ -32,7 +32,7 @@ google.charts.load('current', {'packages':['gantt']});
         ['LED', 'Choix des LEDs', 'Liste de pièces',
          new Date(2017, 1, 17), new Date(2017, 2, 3), null, 100, null],
         ['Transistor', 'Choix des transistors', 'Liste de pièces',
-         new Date(2017, 1, 17), new Date(2017, 2, 7), null, 25, null]
+         new Date(2017, 1, 17), new Date(2017, 2, 10), null, 25, null]
         
       ]);
 	  
