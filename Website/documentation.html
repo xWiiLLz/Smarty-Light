@@ -10,7 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <!-- Favicon includes -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#f7f229">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- End of Favicon includes -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
@@ -52,50 +61,84 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i>Documentation</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Derni&egrave;re modification: 17 mars 2017</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Derni&egrave;re modification: 27 mars 2017</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
-						<p>Vous retrouverez sur cette page les résultats de nos recherches; celles-ci nous ont permis de mettre à terme le projet</p>
+						<p>Vous retrouverez sur cette page les r&eacute;sultats de nos recherches; celles-ci nous ont permis de mettre à terme le projet</p>
                             <section id="electricite" class="doc-section">
                                 <h2 class="section-title">&Eacute;lectricit&eacute;</h2>
-								<p>La fabrication du circuit électrique de notre ampoule à DEL requiert plusieurs composants électroniques pour être fonctionnel.<br>
+								<p>La fabrication du circuit &eacute;lectrique de notre ampoule à DEL requiert plusieurs composants &eacute;lectroniques pour être fonctionnel.<br>
 									Dans cette section, nous allons passer en revue chacun de ces composants, afin d'en comprendre le fonctionnement.<br><br>
-									Puisque nous avons choisi d'utiliser une diode électroluminescente (DEL) comme source de lumière, nous allons commencer par définir ce qu'est une <strong>diode</strong>. 
+									Puisque nous avons choisi d'utiliser une diode &eacute;lectroluminescente (DEL) comme source de lumière, nous allons commencer par d&eacute;finir ce qu'est une <strong>diode</strong>. 
 								</p>	
 								<div id="diodes"  class="section-block">
                                     <h3 class="block-title">Les Diodes</h3>
-										<p>Une diode est l'un des composants électroniques que l'on retrouve dans la quasi-totalité des appareils électroniques que nous utilisons tous les jours.<br><br>
-										Le rôle d'une diode dans un circuit électrique est bien simple: il consiste à <u>laisser passer le courant électrique dans une direction, et de le bloquer dans l'autre</u>.
+										<p>Une diode est l'un des composants &eacute;lectroniques que l'on retrouve dans la quasi-totalit&eacute; des appareils &eacute;lectroniques que nous utilisons tous les jours.<br><br>
+										Le rôle d'une diode dans un circuit &eacute;lectrique est bien simple: il consiste à <u>laisser passer le courant &eacute;lectrique dans une direction, et de le bloquer dans l'autre</u>.
 										On comprend donc pourquoi le sens de branchement d'une diode a une importance.<br><br>
 										<figure><img class="img-responsive" src="assets/images/Diode_symbol.png" alt="Symbole de la diode" />
-										<figcaption>Symbole de la diode dans un circuit électrique. Le sens de la flèche démontre le sens dans lequel le courant peut passer.</figcaption>
+										<figcaption>Symbole de la diode dans un circuit &eacute;lectrique. Le sens de la flèche d&eacute;montre le sens dans lequel le courant peut passer.</figcaption>
 										</figure>
 										<br><br>
 										Maintenant que nous connaissons le rôle de la diode, attardons-nous à sa composition. <br><br>
-										Une diode est composé de deux <strong>semi-conducteurs intrinsèques</strong>. Un semi-conducteur est un matériau qui est normalement isolant, mais qui a tout de même une faible probabilité de laisser passer les électrons, c'est-à-dire de conduire le courant.
-										On dit qu'un semi-conducteur est <strong>intrinsèque</strong> lorsqu'il est pur, c'est-à-dire que sa conductivité ne dépend seulement que de sa structure moléculaire. En réalité, un semi-conducteur n'est jamais complètement pure, mais il existe des substances comme le silicium qui s'y approchent fortement.<br><br>
+										Une diode est compos&eacute; de deux <strong>semi-conducteurs</strong>. Un semi-conducteur est un mat&eacute;riau qui est normalement isolant, mais qui a tout de même une faible probabilit&eacute; de laisser passer les &eacute;lectrons, c'est-à-dire de conduire le courant.
+										On dit qu'un semi-conducteur est <strong>intrinsèque</strong> lorsqu'il est pur, c'est-à-dire que sa conductivit&eacute; ne d&eacute;pend seulement que de sa structure mol&eacute;culaire. En r&eacute;alit&eacute;, un semi-conducteur n'est jamais complètement pure, mais il existe des substances comme le silicium qui s'y approchent fortement.<br><br>
 										
-										Afin de pouvoir manipuler les caractéristiques électriques d'un semi-conducteur, on a recourt au principe de <strong>dopage</strong>. Ce principe consiste en fait à "contaminer" le semi-conducteur intrinsèque avec des atomes possédant un nombre différent d'électrons de valence. En se faisant, il est possible d'obtenir soit un ajout ou un manque d'électrons libres dans la substance.<br><br> 
-										Attardons-nous sur le cas du silicium, qui est l'élément utilisé dans la plupart des diodes et des transistors.<br><br>
+										Afin de pouvoir manipuler les caract&eacute;ristiques &eacute;lectriques d'un semi-conducteur, on a recourt au principe de <strong>dopage</strong>. Ce principe consiste en fait à "contaminer" le semi-conducteur intrinsèque avec des atomes poss&eacute;dant un nombre diff&eacute;rent d'&eacute;lectrons de valence. En se faisant, il est possible d'obtenir soit un ajout ou un manque d'&eacute;lectrons libres dans la substance.<br><br> 
+										Attardons-nous sur le cas du silicium, qui est l'&eacute;l&eacute;ment utilis&eacute; dans la plupart des diodes et des transistors.<br><br>
 										
 										<figure><img class="img-responsive" src="assets/images/silicium_pure.png" alt="Silicium pur" />
-										<figcaption>Structure du silicium à l'état pur</figcaption>
+										<figcaption>Structure du silicium à l'&eacute;tat pur</figcaption>
 										</figure>
-										Dans un bloc de silicium pur, tous les électrons de valences seront liés entre-eux par des liaisons covalentes. Il n'y a donc aucun électron <i>libre</i>, ce qui signifie que le courant ne peut pas passer. 
+										Dans un bloc de silicium pur, tous les &eacute;lectrons de valences seront li&eacute;s entre-eux par des liaisons covalentes. Il n'y a donc aucun &eacute;lectron <i>libre</i>, ce qui signifie que le courant ne peut pas passer. 
 										
-										<br><br>Afin d'obtenir des électrons libres dans le silicium pur, une faible quantité d'un élément ayant un nombre plus élevé d'électrons de valence y sera injectée. On parle alors de <strong>dopage</strong>. 
+										<br><br>Afin d'obtenir des &eacute;lectrons libres dans le silicium pur, une faible quantit&eacute; d'un &eacute;l&eacute;ment ayant un nombre plus &eacute;lev&eacute; d'&eacute;lectrons de valence y sera inject&eacute;e. On parle alors de <strong>dopage</strong>. 
 										
-										<figure><img class="img-responsive" src="assets/images/silicium_n-type.png" alt="Silicium dopé avec du phosphore" />
-										<figcaption>Silicium dopé à l'aide du phosphore - Semi-conducteur type-N</figcaption>
+                                        </p>
+										<p>
+                                        <figure>
+                                            <img class="img-responsive" src="assets/images/silicium_n-type.png" alt="Silicium dop&eacute; avec du phosphore" />
+										    <figcaption>Silicium dop&eacute; à l'aide du phosphore - Dopage de type-N</figcaption>
 										</figure>
 										
 										<br>
-										Puisque le phosphore possède 5 électrons de valence et que le silicium n'en possède que 4, il y aura forcément un électron célibataire. Cet électron libre 
-										
-									
-                                    </p>
+										Puisque le phosphore possède 5 &eacute;lectrons de valence et que le silicium n'en possède que 4, il y aura forc&eacute;ment un &eacute;lectron c&eacute;libataire. 
+                                        Cet &eacute;lectron libre pourra facilement se d&eacute;placer dans la structure du silicium, ce qui permettra au courant de passer.
+                                        On appelle ce type de dopage le "n-type", puisqu'on parle d'une charge n&eacute;gative qui se d&eacute;place.
+										</p>
+                                        <p>
+                                        <figure>
+                                            <img class="img-responsive" src="assets/images/silicium_p-type.png" alt="Silicium dop&eacute; avec du bore" />
+										    <figcaption>Silicium dop&eacute; à l'aide du bore - Dopage de type-P</figcaption>
+										</figure>
+                                        &Agrave; l'inverse du phosphore, le bore poss&egrave;de un &eacute;lectron de moins que le silicium sur sa couche de valence. 
+                                        Lors de l'injection du bore dans un bloc de silicium pur, il y aura un manque d'&eacute;lectron caus&eacute; par la structure atomique du bore, qui pourra &eacute;galement se d&eacute;placer.
+                                        On parle alors de trous (<i>holes</i> en anglais) qui se d&eacute;placent dans le semi-conducteur. 
+                                        Ce dopage est appelé "p-type", puisqu'on a maintenant un manque d'électron - un trou - qui se déplace; on en conclut donc que c'est une charge positive qui peut se déplacer.
+                                        </p>
+                                        <p>
+                                            Comme mentionné précédemment, une diode est composée de deux semi-conducteurs: un semi-conducteur de type-p et un semi-conducteur de type-n, qui sont formés respectivement par l'ajout de substance comme le bore et le phosphore.
+                                            Voici une représentation graphique d'une jonction p-n:
+                                            <figure>
+                                                <img class="img-responsive" src="assets/images/jonction-pn.png" alt="Silicium dop&eacute; avec du bore" />
+										        <figcaption>Jonction P-N - Illustration de la structure d'une diode</figcaption>
+										    </figure>
+                                        </p>
+                                        <p>
+                                            À la jonction PN, un phénomène bien particulier se produit. Les électrons libres du semi-conducteur dopé de type-n seront naturellement attirés vers les trous (charges positives) du semi-conducteur de type P.
+                                            Le côté gauche (type P) de la jonction sera donc légèrement négatif, tandis que le côté droit (type N) sera légèrement positif.
+                                            Voici une illustration de ce phénomène:
+                                            <figure>
+                                                <img class="img-responsive" src="assets/images/jonction-pn-depletion.png" alt="Silicium dop&eacute; avec du bore" />
+										        <figcaption>Jonction P-N - Illustration de la zone de déplétion</figcaption>
+										    </figure>
+                                            La zone influencée par l'attraction des électrons libres vers les trous du type-p au repos est nommée la <strong>zone de déplétion</strong>.
+                                            Dans cette dernière, aucun électron libre n'est présent; le courant ne peut donc pas passer. Une <strong>barrière de potentiel</strong> d'environ 0.7V est créée,
+                                            ce qui signifie qu'il faudra fournir un potentiel d'au moins 0.7V afin de franchir cette barrière et donc, permettre au courant de passer.
+                                            Voyons ce qui se produit lorsque nous fournissons une source de courant externe aux bornes de la diode.
+                                        </p>
 									
                                 </div><!--//section-block-->
 								<div id="del"  class="section-block">
