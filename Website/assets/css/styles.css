@@ -1275,3 +1275,29 @@ figure, figure img{
 	text-align:center;
 	margin:20px auto;
 }
+
+/* Plan de projet */
+.list-group-item {
+	overflow:auto;
+}
+.date-style{
+	float:right;
+	margin-right:10px;
+	color:#888;
+	text-align:center;
+}
+
+.hours-style{
+	background-color: #58bbee;
+    border-radius: 10px;
+	color:#FFF;
+	padding:3px;
+	margin-left:10px;
+}
+@media(max-width:991px){
+	.date-style{
+		display:block;
+		float:none;
+		margin:10px;
+	}
+}
