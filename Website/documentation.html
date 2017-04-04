@@ -61,7 +61,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i>Documentation</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Derni&egrave;re modification: 27 mars 2017</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Derni&egrave;re modification: 03 avril 2017</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -139,11 +139,39 @@
                                             ce qui signifie qu'il faudra fournir un potentiel d'au moins 0.7V afin de franchir cette barrière et donc, permettre au courant de passer.
                                             Voyons ce qui se produit lorsque nous fournissons une source de courant externe aux bornes de la diode.
                                         </p>
+										<p>
+											<figure>
+                                                <img class="img-responsive" src="assets/images/diode_reverse-biased.png" alt="Polarisation inverse d'une diode" />
+										        <figcaption>Polarisation inverse d'une diode</figcaption>
+										    </figure>
+											Lorsque l'on relie le terminal positif d'une batterie du côté du semi-conducteur de type N, les électrons y sont attirés.
+											La zone de déplétion et la barrière de potentiel à franchir s'élargissent grandement, ce qui signifie qu'il faudra beaucoup plus de potentiel afin de faire passer le courant.
+											Résultat, le courant ne peut pas passer. On surnomme ce type de branchement un branchement à <strong>polarisation inverse</strong> d'une diode.
+										</p>
+                                        <p>
+											<figure>
+                                                <img class="img-responsive" src="assets/images/diode_forward-biased.gif" alt="Polarisation directe d'une diode" />
+										        <figcaption>Polarisation directe d'une diode</figcaption>
+										    </figure>
+											Vous remarquerez que le phénomène est maintenant bien différent du cas précédent. Lorsque la borne négative d'une source de courant est reliée du côté des électrons libres (type N), ces derniers en sont repoussés. 
+                                            Si la différence de potentiel aux bornes de la diode est suffisante pour franchir la barrière de potentiel (0.7V dans le cas de la diode au Silicium), les électrons libres la traverseront, se recombinant avec les <strong>trous</strong>.<br>
+                                            <br>Lorsqu'un électron franchit la barrière de potentiel pour aller se recombiner, il passe de la bande de conduction à la bande de valence, baissant ainsi en niveau d'énergie.
+										</p>
 									
                                 </div><!--//section-block-->
 								<div id="del"  class="section-block">
                                     <h3 class="block-title">Les Diodes &Eacute;lectroluminescentes (DEL)</h3>
-                                    <p>
+                                    <p>Mantenant que nous comprenons le fonctionnement d'une diode, il est très facile de comprendre les diodes électroluminescentes.
+                                        Comme mentionné précédemment, la migration d'un électron de la partie N à la partie P ainsi que sa recombinaison avec un trou lui inflige une perte d'énergie.
+                                        <br><br>Dans le cas de la diode électroluminescente, cette énergie se voit dégagée sous la forme d'un photon. Il est possible de facilement calculer la longueur d'onde du photon émis en fonction
+                                        de la quantité d'énergie libérée. La formule suivante permet de le faire:<br>
+                                        $$E=\frac{hc}{\lambda}$$<br>
+                                        o&ugrave;</p>
+                                        <p class="equation">          \(E=Énergie\) (en joules),<br>
+                                                    \(h=6.626x10^{-34}J*s\) (Constante de Planck),<br>
+                                                    \(c=3.00x10^8m/s\ \) (Vitesse de la lumière) et <br>
+                                                    \(\lambda = Longueur\ d'onde\ du\ photon,\ en\ m\)
+                                        
                                     </p>
 									
                                 </div><!--//section-block-->
@@ -207,6 +235,9 @@
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     
 </body>
 </html> 

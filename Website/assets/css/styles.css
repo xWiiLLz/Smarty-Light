@@ -1301,3 +1301,9 @@ figure, figure img{
 		margin:10px;
 	}
 }
+
+/* Documentation */
+.equation{
+  margin: 0 25%;
+  line-height: 20pt;
+}
