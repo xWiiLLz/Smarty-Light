@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Serveur Back-end pour Smarty-Light",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xWiiLLz/smarty-light.git"
+  },
+  "keywords": [
+    "Smarty-Light",
+    "IoT"
+  ],
+  "author": "William Bergeron-Drouin & David Huard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xWiiLLz/smarty-light/issues"
+  },
+  "homepage": "https://github.com/xWiiLLz/smarty-light#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  }
+}
