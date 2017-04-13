@@ -1,2 +1,4 @@
 Website/assets/less/*
 Website/assets/plugins/*
+Client/node_modules/*
+Server/node_modules/*
