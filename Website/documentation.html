@@ -198,7 +198,94 @@
                                         
                                     </p>
                                 </div><!--//Transistors section-block-->
-                            </section><!--//doc-section-->
+								<div id="convertisseur-buck" class="section-block">
+									<h3>Convertisseur buck (Alimentation &agrave; d&eacute;coupage)</h3>
+									<p>Le hacheur en série plus communément appeler sous le nom de convertisseur Buck sert à réduire la tension fournie par le réseau électrique d’un bâtiment conventionnel afin d’alimenter les appareils électroniques dont elles requièrent une faible tension. Le convertisseur Buck comporte plusieurs avantages : </p>
+									<ul>
+										<li>Il possède un poids plume, si on le compare au transformateur conventionnel qui est composé d’une grande armature métallique et de grande bobine de fil qui est très massive. </li>
+										<li>Le convertisseur buck est très compact, c’est pourquoi c’est la technologie première des chargeurs d’appareille mobile, ils ne sont pas encombrants et possèdent une grande mobilité.</li> 
+										<li>Il possède un rendement typique élevé (75%) qui permet d’éviter un dégagement thermique imposant et une perte imposante d’énergie électrique.</li>
+										<li>Le cout de production est aussi un avantage, car les composantes du circuit que le compose ne sont pas dispendieuse contrairement à un transformateur conventionnel qui possède une grande quantité de métaux précieux. </li>
+									</ul> 
+								    <p>
+                                        <figure><img class="img-responsive" src="assets/images/convertisseur_buck.jpg" alt="Convertisseur buck" />
+										<figcaption>Convertisseur buck<br><span class="source-text">Source: <a href="https://fr.wikipedia.org/wiki/Alimentation_à_découpage" alt="Wikipédia - Alimentation à découpage">Wikipédia</a></span></figcaption>
+										</figure>
+                                        Les éléments principaux d’un convertisseur buck sont les suivant :</p>
+					                <ol> 
+									<li>Connecteur d’alimentation (120v au Québec)</li>
+                                    <figure><img class="img-responsive" src="assets/images/120_AC.png" alt="Alimentation 120v AC" />
+										<figcaption>Alimentation 120v AC</figcaption>
+										</figure>
+									<li>Un fusible de protection qui assure une certaine limite au courant afin d’éviter des dommages au circuit.</li>
+                                    <figure>
+                                        <img class="img-responsive" src="assets/images/Fusible.png" alt="Fusible" />
+										<figcaption>Fusible</figcaption>
+									</figure>
+
+                                    <li>Filtre EMI, et bobine d’arrêt pour bloquer les hautes fréquences, atténuer les basses fréquences et laisser passer le continu.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Inductance.png" alt="Inductance (bobine)" />
+										<figcaption>Inductance (bobine)</figcaption>
+									</figure>
+                                    <li>Un pont de diode permet de convertir le courant AC (courant alternatif) en un courant DC (courant continu).</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Pont_diodes.jpg" alt="Pont de diodes (AC vers DC)" />
+										<figcaption>Pont de diodes (AC vers DC)</figcaption>
+									</figure>
+                                    <li>Un condensateur de filtrage stocke l'énergie pour l'étage de découpage.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Condensateur_filtrage.png" alt="Condensateur" />
+										<figcaption>Condensateur</figcaption>
+									</figure>
+                                    <li>Un transistor de découpage qui va permettre d’ouvrir (on) ou de fermer le circuit (off), il est monté sur un radiateur, car c’est une composante électrique qui dégage une importante quantité d’énergie thermique et le radiateur va lui permettre d’évacuer effectivement sa chaleur afin qu’il conserve une température de fonctionnement normal.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Transistor_decoupage.png" alt="Transistor" />
+										<figcaption>Transistor</figcaption>
+									</figure>
+                                    <li>Un transformateur électrique qui va contribuer à l’abaissement de la tension et à l’isolation entre les parties de haute et de basse tension.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Transformateur.png" alt="Transformateur" />
+										<figcaption>Transformateur</figcaption>
+									</figure>
+                                    <li>Une Diode Schottky (commutation rapide) montée sur un radiateur.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Diode_schottky.png" alt="Diode Schottky" />
+										<figcaption>Diode Schottky</figcaption>
+									</figure>
+                                    <li>Condensateur de filtrage.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Condensateur_filtrage.png" alt="Condensateur" />
+										<figcaption>Condensateur</figcaption>
+									</figure>
+                                    <li>Une bobine de filtrage.</li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Inductance.png" alt="Inductance (bobine)" />
+										<figcaption>Inductance (bobine)</figcaption>
+									</figure>
+                                    <li>Circuit de commande de l'optocoupleur.</li>
+                                    <li>Un optocoupleur permet une isolation entre les parties de haute et de basse tension et permet le signal entre deux composants sans qu’il y ait de contact entre eux (signal infrarouge d’une diode électroluminescent à un récepteur (le phototransistor). </li>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Octocoupleur.png" alt="Octocoupleur" />
+										<figcaption>Octocoupleur</figcaption>
+									</figure>
+                                    <li>Circuit de commande du transistor de découpage. </li>
+                                    <li>Sortie de l'alimentation. </li>
+									</ol> 
+									<p>Explication de la variation du courant de l’inductance L dans un circuit simplifier</p>
+									<figure>
+                                        <img class="img-responsive" src="assets/images/Schema_convertisseur_buck.png" alt="Schéma du convertisseur buck" />
+										<figcaption>Schéma du convertisseur buck</figcaption>
+									</figure>
+                                    <figure>
+                                        <img class="img-responsive" src="assets/images/Differents_etats_convertisseur_buck.png" alt="Différents états du convertisseur buck" />
+										<figcaption>Différents états du convertisseur buck</figcaption>
+									</figure>
+                                    <p>Lorsque l’interrupteur est passant, on peut observer que le courant dans le convertisseur buck possède un taux d’accroissement, car l’énergie stockée dans l’inductance augmente.Lorsque l’interrupteur est bloqué, on peut observer que le courant dans le convertisseur buck possède un taux de décroissement, car l’énergie stockée dans l’inductance diminue.</p>
+									<p>Sources : <a href="https://fr.wikipedia.org/wiki/Alimentation_%C3%A0_d%C3%A9coupage">Alimentation à découpage - Wikipédia</a>, 
+                                                <a href="https://fr.wikipedia.org/wiki/Convertisseur_Buck">Convertisseur buck - Wikipédia</a></p>
+								</div>
+							</section><!--//doc-section-->
                                 
                             <section id="notions-info" class="doc-section">
                                 <h2 class="section-title">Informatique</h2>
@@ -222,6 +309,7 @@
                                         <li><a class="scrollto" href="#diodes">Diodes</a></li>
                                         <li><a class="scrollto" href="#del">DELs</a></li>
                                         <li><a class="scrollto" href="#transistors">Transistors</a></li>
+                                        <li><a class="scrollto" href="#convertisseur-buck">Convertisseur buck</a></li>
                                     </ul><!--//nav-->
 								</li>
                                 <li>

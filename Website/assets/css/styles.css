@@ -1307,3 +1307,7 @@ figure, figure img{
   margin: 0 25%;
   line-height: 20pt;
 }
+span.source-text{
+  font-size:0.75em;
+  color:#666;
+}
