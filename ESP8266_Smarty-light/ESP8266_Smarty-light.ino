@@ -13,7 +13,6 @@ Huge thanks to the developpers of those librarys:
 
 */
 
-
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
@@ -24,19 +23,19 @@ Huge thanks to the developpers of those librarys:
 
 //Déclaration d'adaptateur WiFi
 ESP8266WiFiMulti WiFiMulti;
-//Variables Wifi (CHANGE THIS TO YOUR VALUES)
-const char* ssid     = "YOUR_SSID";
-const char* password = "YOUR_SSID_PASSWORD";
+//Variables Wifi 
+const char* ssid     = "======Changez pour votre nom de réseau Wifi======";
+const char* password = "======Changez pour votre mot de passe Wifi======";
 
 //Diclaration du client Socket.IO
 SocketIoClient webSocket;
 //Variables Socket.IO
-const char* host = "YOUR_HOST_HERE"
-const int port = 3000; //Replace by your NodeJS port number.
+const char* host = "192.168.1.100";// Remplacez par votre valeur
+const int port = 3000; //Remplacez par le port du Serveur API. 3000 est la valeur par défaut.
 
-int redPin = 2;
-int greenPin = 5;
-int bluePin = 4;
+int redPin = 14;
+int greenPin = 4;
+int bluePin = 5;
 int redValue, greenValue, blueValue;
 
 void event(const char * payload, size_t length) {
@@ -88,7 +87,6 @@ void loop() {
     //Loop requise pour le webSocket
     webSocket.loop();
 
-    //
     analogWrite(redPin, redValue);
     analogWrite(greenPin, greenValue);
     analogWrite(bluePin, blueValue);

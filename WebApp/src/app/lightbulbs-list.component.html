@@ -1,0 +1,13 @@
+<div *ngFor="let lightbulb of lightbulbs">
+    <div class="lightbulb-selector-container">
+            <h3>ID : {{lightbulb.id}}</h3>
+            <p>
+                Red = 
+                <input [(ngModel)]="lightbulb.red" placeholder="red" /><br>
+                Green = {{lightbulb.green}}<br>
+                Blue = {{lightbulb.blue}}
+
+            </p>
+    </div>
+
+</div>
