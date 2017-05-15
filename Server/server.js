@@ -10,6 +10,19 @@ var cors = require('cors');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({origin: null}));
+
+app.use((req, res, next) => {
+            // Set permissive CORS header - this allows this server to be used only as
+            // an API server in conjunction with something like webpack-dev-server.
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+
+            // Disable caching so we'll always get the latest comments.
+            res.setHeader('Cache-Control', 'no-cache');
+            next();
+        });
+
 require('./routes/routes-config')(app);
 
 var allSockets = [];
@@ -26,11 +39,25 @@ app.io.on('connection', function (socket){
   
    var lightbulbID = generateID();   //On lui donne un id
    console.log('Added lightbulb with id:', socket.id);
+
+   // On récupère l'adresse ip
+  var clientIp = socket.request.connection.remoteAddress;
+  var clientPort = socket.request.connection.remotePort;
+
+  // On extrait les caractères ::ffff: ipv6 pour récupérer seulement ipv4
+  var idx = clientIp.lastIndexOf(':');
+  if (~idx && ~clientIp.indexOf('.'))
+  {
+    clientIp = clientIp.slice(idx + 1);
+  }
+  console.log('New connection from ' + clientIp);
    app.lightbulbs.push({id: lightbulbID,
                     socketID: socket.id,
                     red: 0,
                     green: 0,
                     blue: 0,
+                    ip: clientIp,
+                    port: clientPort
                     
   });
 

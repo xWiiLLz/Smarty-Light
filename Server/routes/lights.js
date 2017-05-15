@@ -4,11 +4,18 @@ var findWithAttr  = require('../functions/misc_functions').findWithAttr;
 const util = require('util');
 
 router.post('/',function(req,res){
+    console.log("GOT POST REQ");
+    console.log(req.body);
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
     var red = req.body.red;
     var green = req.body.green;
     var blue = req.body.blue; 
     if(req.body.id!=null)
     {
+        
+        console.log(req.app.lightbulbs);
         var id = req.body.id;
         if(req.app.lightbulbs)
         {
@@ -54,8 +61,42 @@ router.get('/',function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
     res.send(req.app.lightbulbs);
-    console.log('Requête Get reçu...');
-    console.log(req.app.lightbulbs);
+    /*console.log('Requête Get reçu...');
+    console.log(req.app.lightbulbs);*/
+});
+
+//Route pour trouver acquérir l'information d'une ampoule unique
+router.get('/unique/:id',function(req,res){
+    
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+    if(req.params.id!=null)
+    {
+    var id = req.params.id;
+        if(req.app.lightbulbs)
+        {
+            var tempLightbulbs = req.app.lightbulbs;
+            var indexLightbulbs = findWithAttr(tempLightbulbs,'id',id);
+            if(indexLightbulbs>=0)
+            {
+                // On renvoie l'ampoule unique trouvée;
+                res.send(req.app.lightbulbs[indexLightbulbs]);
+            }
+            else
+            {
+                res.send(null);
+                console.log("Index de lightbulb = ", indexLightbulbs);
+                console.log(util.inspect(req.app.lightbulbs[indexLightbulbs], false, null))
+            }
+        }
+        else{
+            console.log("ERURURURURURU");
+        }
+    }
+    else
+    {
+        res.send("Null id");
+    }
 });
 
 module.exports=router;

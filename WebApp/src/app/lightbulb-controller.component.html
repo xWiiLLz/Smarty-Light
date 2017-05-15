@@ -1,0 +1,29 @@
+<div *ngIf="lightbulb">
+    <h3>Contrôles de l'ampoule #{{lightbulb.id}}</h3>
+    <ul class="list-group">
+        
+        <li class="list-group-item">
+            <fieldset>
+            <label for="r">Rouge</label>
+            <input class="red_slider" type="range" min="0" max="255" id="r" step="1" value="0" [(ngModel)]="lightbulb.red" (ngModelChange)="onChange($event)">
+            <output for="r" id="r_out">{{lightbulb.red}}</output>
+            </fieldset>  
+        </li>
+        <li class="list-group-item">
+            <fieldset>
+            <label for="v">Vert</label>
+            <input class="green_slider" type="range" min="0" max="255" id="g" step="1" value="0" [(ngModel)]="lightbulb.green" (ngModelChange)="onChange($event)">
+            <output for="v" id="v_out">{{lightbulb.green}}</output>
+            </fieldset>
+        </li>
+        <li class="list-group-item">
+            <fieldset>
+            <label for="b">Bleu</label>
+            <input class="blue_slider" type="range" min="0" max="255" id="b" step="1" value="0" [(ngModel)]="lightbulb.blue" (ngModelChange)="onChange($event)">
+            <output for="b" id="b_out">{{lightbulb.blue}}</output>
+            </fieldset>  
+        </li>
+    </ul>
+
+
+</div>

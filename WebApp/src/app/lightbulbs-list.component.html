@@ -1,13 +1,7 @@
-<div *ngFor="let lightbulb of lightbulbs">
-    <div class="lightbulb-selector-container">
-            <h3>ID : {{lightbulb.id}}</h3>
-            <p>
-                Red = 
-                <input [(ngModel)]="lightbulb.red" placeholder="red" /><br>
-                Green = {{lightbulb.green}}<br>
-                Blue = {{lightbulb.blue}}
-
-            </p>
-    </div>
-
+<p class="text-muted">(Cliquez sur une ampoule pour la sélectionner)</p>
+<div class="list-group lightbulb-selector-container">
+    <a class="list-group-item list-group-item-action" [routerLinkActive]="['active']" [routerLink]="['/controller', lightbulb.id]"*ngFor="let lightbulb of lightbulbs">
+        <h3>Ampoule #{{lightbulb.id}}</h3>
+        <p class="ip-field">Adresse ip : {{lightbulb.ip}}:{{lightbulb.port}}</p>
+    </a>
 </div>
