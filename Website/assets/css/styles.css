@@ -928,6 +928,7 @@ select {
   color: #8A40A7;
 }
 .affix-top {
+  width:240px;
   position: absolute;
   top: 15px;
 }

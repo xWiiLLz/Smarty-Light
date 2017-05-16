@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Smarty-Light, votre lumière intelligente</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <!-- Favicon includes -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#f7f229">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- End of Favicon includes --> 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body class="body-orange">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="fa fa-lightbulb-o icon"></span>
+                            <span class="text-highlight">Smarty</span><span class="text-bold">Light</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="active">Reproduire le projet</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_puzzle_alt"></span>Reproduire le projet</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Derni&egrave;re modification: 16 mai 2017</div>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <p>Avec ce guide explicatif, vous allez être en mesure de répliquer notre projet et d'utiliser notre code source facilement.
+                                Nous optons pour une mentalité Open-source. Vous pouvez modifier le code source et améliorer le projet comme bon vous semble!</p>
+                            <section id="reproduire-ampoule" class="doc-section">
+                                <h2 class="section-title">L'ampoule et son circuit</h2>
+                                
+                                <div id="preparation-fabrication" class="section-block">
+								    <h3 class="block-title">Préparation à la fabrication</h3>
+									<p>Avant de procéder à la fabrication, il sera bien important de vous assurer que vous avez tous les composants du circuit en main. En premier lieu vous allez avoir besoin d’une dizaine de fils conducteurs afin d’établir le contact entre les composants du circuit.  </p>
+									<p>Ensuite, une alimentation à découpage sera nécessaire afin d’alimenter votre circuit. Ce composant doit être d’une taille minimale afin d’optimiser l’espace disponible dans l’ampoule, doit pouvoir exercer une tension minimale de 5volt et un courant de 1ampere. Nous avons alors choisi le bloc d’alimentation d’Apple de 1w, car il a toutes les caractéristiques nécessaires. Vous aurez aussi besoin d’une prise USB male pour le connecter au chargeur. </p>
+									<p>Un microcontrôleur sera nécessaire à la gestion des opérations de votre circuit. Ce microcontrôleur doit avoir un minimum de 3 sorties analogues, un transmetteur WiFi intégré afin de permettre les échanges d’information avec votre réseau internet, une taille minimale afin d’optimiser l’espace disponible dans l’ampoule. Le microcontrôleur choisi est l’ESP8266, car il possède toutes ces caractéristiques. </p>
+									<p>Afin de fournir un éclairage puissant, économe d’énergie et de couleur variante, vous aller avoir besoin de trois lumières DEL, car chacune de ces lumières aura une couleur différent afin de pour faire des mélanges et d’obtenir n’importe quelle couleur. Nous avons choisi une plaquette DEL de la marque Cree XLamp et du modèle XM-L, car elle possède une grande puissance et elles ont toutes les caractéristiques requises.</p>
+									<p>L’ampoule D.E.L. ne fait pas partie du circuit, mais elle améliore l’esthétique de projet et elle sert de contenant. Cette Ampoule doit seulement être faite de plastique afin de faciliter le démontage et de taille standard. </p>
+									<p>Pour compléter cette liste de composante essentielle à la construction de votre circuit, vous allez devoir y ajouter des transistors. Cette composante est essentielle afin d’amplifier le signal provenant du microcontrôleur, alors vous aurez besoin de trois transistors pour chaque DEL de couleur différente. Chaque DEL consomme un courant de 350milliampere, alors chaque transistor doit pouvoir être dans la possibilité de passer cette quantité de courant sans qu’il surchauffe et doit pouvoir résister à une tension de 5volt. Nous avons donc choisi les transistors p2n2222a, car elles peuvent supporter un courant de plus de 600miliampere et une tension de 40v au maximum. Pour limiter le passage du courant à la base des transistors, l’utilisation de résistance sera requise. Vous aurez donc besoin de trois résistances de 300ohm.</p>
+									<p>La préparation à la fabrication requiert aussi d’avoir en sa possession le bon outil. Vous allez avoir besoin d’un dénudeur de fils pour faciliter les connexions, un fusil a colle chaude pour fixer et isoler les composantes, un soudeur a Étain pour solidifier et établir une conductibilité entre les composantes.</p>
+                                </div>
+                                <div id="construction-ampoule" class="section-block">
+                                     <h3 class="block-title">Construction de l’ampoule</h3>
+									<figure><img class="img-responsive" src="assets/images/Schema_circuit.png" alt="Diagramme de flux" />
+								<figcaption>Schéma de l’ampoule</figcaption>
+								</figure>
+
+									<p>Dans ce schéma ci-haut, les composantes représenter par T1,T2 et T3 sont des transistors et les composantes représenter par R1,R2 et R3 sont des résistances.</p>
+									<figure><img class="img-responsive" src="assets/images/USB_Schema.png" alt="Diagramme de flux" />
+								<figcaption>
+									
+									<p>1-Dénuder chacune des extrémités des fils que vous avez.</p>
+									<p>2-souder un fils de D2 à R3, de R3 à T1, de T1 à P+ et de T1 à B.</p>
+									<p>3-Souder un fils de D4 à R1, de R1 à T3, de T3 à P+ et de T3 à R.</p>
+									<p>4-Souder un fils de D5 à R2, de R2 à T2, de T2 à P+ et de T2 à G.</p>
+									<p>5-Souder un fil de P- aux DEL R,G,B et au GND.</p>
+									
+								</figcaption>
+								</figure>
+								    <figure><img class="img-responsive" src="assets/images/Ampoule.png" alt="Diagramme de flux" />
+								<figcaption>
+
+									<p>6-Décoller le haut de l’ampoule</p>
+
+								</figcaption>
+								</figure>
+									    <figure><img class="img-responsive" src="assets/images/Socket&Buck.png" alt="Diagramme de flux" />
+								<figcaption>
+
+								    <p>7-Souder les connexions A1 à B1 et A2 à B2.</p>
+									<p>8-Coller l’alimentation à découpage au fond de l’ampoule et ajouter sur le dessus le esp8266 et le circuit électrique. Ajouter ensuite la plaquette de lumières DEL sur le dessus, assurez-vous qu’il n’y a rien qui obstrue le passage de la lumière, car cela pourrait provoquer des ombres. Refermer ensuite le haut de l’ampoule et tester votre projet.</p>
+
+								</figcaption>
+								</figure>
+                                </div>
+                            </section>
+                            <section id="logiciel" class="doc-section">
+                                <h2 class="section-title">Partie logiciel</h2>
+                                <p>Dans cette partie, nous allons expliquer en premier lieu comment récupérer notre code source.
+                                    Par la suite, nous allons expliquer comment programmer le micro-contrôleur pour votre réseau, 
+                                    comment mettre en marche le serveur et comment lancer l'application web qui permettra de contrôler l'ampoule.
+                                </p>
+                                <div id="recuperer-code" class="section-block">
+                                    <h3 class="block-title">Téléchargement de notre code source</h3>
+                                    <p>Notre code source est entièrement libre d'accès. Pour récupérer la dernière version à jour, veuillez suivre ce lien GitHub:</p>
+                                    <a href="https://github.com/xWiiLLz/smarty-light" target="_blank" alt="Smarty-Light sur GitHub" title="Smarty-Light sur GitHub">
+                                        <figure>
+                                            <img class="img-responsive" src="assets/images/Github.png" alt="GitHub.com" title="GitHub.com"/>
+                                            <figcaption>Code source hébergé sur GitHub.com</figcaption>
+                                        </figure>
+                                    </a>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-info-circle"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Téléchargement de Git</h4>
+                                            <p>Pour la suite du guide, j'utiliserai la version Windows de Git. Il vous ait possible de récupérer le code source de notre 
+                                                projet en téléchargeant l'archive .zip qui est disponible sur la page GitHub du projet, et ainsi sauter l'installation de Git.
+                                                 Cependant, la console (Bash) qui vient avec l'installation de Git sera utilisée dans toutes les étapes, et est supérieure à la ligne de commandes Windows par défaut.
+                                                 Je vous recommande donc fortement de procéder à l'installation de Git.</p>
+                                                 <p>Vous pouvez télécharger Git pour Windows en <a href="https://git-scm.com/download/win" target="_blank">cliquant ici</a>.
+                                                 Je vous conseille de garder cocher l'option d'installation "Add Git Bash Here to windows context menu".</p>
+                                        </div><!--//content-->
+                                    </div>
+                                    <p>Une fois Git installé sur votre ordinateur, vous pouvez facilement clôner le projet depuis GitHub.</p>
+                                    <p>Ouvrez Git Shell nouvellement installé sur votre ordinateur. Rendez-vous dans le dossier dans lequel vous voulez récupérer le code source. 
+                                        Vous pouvez également ouvrir Git Shell depuis l'explorateur Windows en effectuant un clic droit avec l'option "Git Bash Here".</p>
+                                    <figure>
+                                            <img class="img-responsive" src="assets/images/Git_Bash_Here.png" alt="Git Bash Here" title="Git Bash Here"/>
+                                            <figcaption>Cette commande placera la console dans le dossier spécifié. <br>
+                                            Pas besoin d'utiliser les commandes <code>cd</code> pour se déplacer dans le bon dossier.</figcaption>
+                                    </figure>
+                                    <p>Vous devrez maintenant avoir une fenêtre de la sorte:
+                                        <figure>
+                                            <img class="img-responsive" src="assets/images/Git_Bash.png" alt="Git Bash" title="Git Bash"/>
+                                        </figure>
+                                    </p>
+                                    <p>Pour télécharger notre code source, utilisez la commande suivante:</p>
+                                    <pre class=" language-git"><code class=" language-git"><span class="token command">git clone https://github.com/xWiiLLz/smarty-light.git</span></code></pre>
+                                    <p>Veuillez patienter, le téléchargement peux prendre plusieurs minutes.</p>
+                                </div>
+                                
+                                <div id="preparation-serveur" class="section-block">
+                                    <h3 class="block-title">Préparation et démarrage du serveur</h3>
+                                    <p>Pour lancer notre serveur, vous allez avoir besoin d'installer Node.JS ainsi que du Node Package Manager (NPM).
+                                        Vous pouvez installer Node.JS en cliquant sur l'icone suivante:</p>
+                                        
+                                    <a href="https://nodejs.org/en/download/" target="_blank" alt="Téléchargez NodeJS du site officiel" title="Téléchargez NodeJS du site officiel">
+                                         <figure>
+                                            <img class="img-responsive" src="assets/images/NodeJS.png" alt="NodeJS" title="NodeJS"/>
+                                            <figcaption>Téléchargez la dernière version de NodeJS</figcaption>
+                                        </figure>
+                                    </a>
+                                    <p>Une fois NodeJS installé, dirigez vous dans le sous-dossier "Server" du dossier "Smarty-Light" récemment télécharger.
+                                        Ouvrez ensuite une nouvelle fenêtre Git Bash à l'intérieur de ce dossier.</p>
+                                        <p>Vous aurez besoin de l'adresse ip de votre ordinateur sur le réseau local dans les étapes futures. 
+                                            Pour la connaître, entrez la commande suivante dans l'interface de commandes Git Bash:</p>
+                                    <pre class=" language-git"><code class=" language-git"><span class="token command">ipconfig</span></code></pre>   
+                                    <p>Vous devrez ensuite cibler votre adaptateur réseau et noter l'adresse IPv4 qui lui est assigné sur votre réseau local.</p>
+                                    <figure>
+                                        <img class="img-responsive" src="assets/images/ipconfig.png" alt="Récupération de l'adresse IP du serveur" title="Récupération de l'adresse IP du serveur"/>
+                                        <figcaption>Récupération de l'adresse IP du serveur</figcaption>
+                                    </figure>
+                                    <p>Maintenant que nous connaissons l'adresse ip du serveur, nous pouvons lancer le serveur. 
+                                        Pour se faire, lancer la commande suivante:</p>
+                                    <pre class=" language-git"><code class=" language-git"><span class="token command">node server.js</span></code></pre>   
+                                    <p>Si tout s'est déroulé comme prévu, vous devriez obtenir une fenêtre de la sorte:</p>
+                                    <figure>
+                                        <img class="img-responsive" src="assets/images/Server_success.png" alt="Serveur démarré" title="Serveur démarré"/>
+                                        <figcaption>Serveur démarré</figcaption>
+                                    </figure>
+                                    <p>Il se peut que vous obteniez l'erreur suivante lors du démarrage du serveur:</p>
+                                    <figure>
+                                        <img class="img-responsive" src="assets/images/Server_error.png" alt="Erreur lors du démarrage du serveur" title="Erreur lors du démarrage du serveur"/>
+                                        <figcaption>Erreur lors du démarrage du serveur - Port utilisé</figcaption>
+                                    </figure>
+                                    <p>Cette erreur signifie que le port du serveur (3000 par défaut) est déjà utilisé par un autre processus. 
+                                        Si c'est le cas, vérifiez que vous n'avez pas une autre instance du serveur en cours ou une application qui utilise le même port.
+                                        Advenant le cas o&ugrave; il vous ait impossible de libérer le port 3000, vous pouvez le changer dans le fichier Server.js et utiliser un autre port.
+                                    </p>
+                                </div><!--//section-block - Section Serveur -->
+
+                                <div id="televerser-esp8266" class="section-block">
+                                    <h3 class="block-title">Préparation et téléversement du code vers le ESP8266</h3>
+									<p>Avant de procéder au téléversement du code vers le ESP8266 et ainsi le programmer pour l'interraction avec le serveur, 
+                                        il faudra modifier quelques lignes dans le code source. 
+                                        Ouvrez le fichier "ESP8266_Smarty-light.ino" se trouvant dans le sous-dossier "ESP8266_Smarty-light" du dossier principal "smarty-light".
+                                    </p>
+                                    <p>Une fois dans le fichier, modifiez le contenu de la variable "ssid" par le nom du réseau wi-fi. 
+                                        Remplacez également le contenu de la variable "password" par le mot de passe du réseau wi-fi.
+                                    </p>
+
+                                    <pre class="language-cpp"><code class="language-cpp">//Variables Wifi 
+const char* ssid     = "======Changez pour votre nom de réseau Wifi======";
+const char* password = "======Changez pour votre mot de passe Wifi======";</code>
+                                    </pre>
+                                    <p>Par exemple, si mon réseua Wifi se nomme "WiFi-Ninja" et que le mot de passe est "12345", je devrais avoir le code suivant:</p>
+                                    <pre class="language-cpp"><code class="language-cpp">//Variables Wifi 
+const char* ssid     = "WiFi-Ninja";
+const char* password = "12345";</code>
+                                    </pre>
+                                    <p>Vous devrez ensuite ajuster l'adresse IP et le port du serveur avec l'adresse IP qui a été notée précédemment dans les champs suivants:</p>
+                                    <pre class="language-cpp"><code class="language-cpp">//Variables Socket.IO
+const char* host = "192.168.1.100";// Remplacez par votre valeur
+const int port = 3000; //Remplacez par le port du Serveur API. 3000 est la valeur par défaut.</code>
+                                    </pre>
+                                    <p>Le code source est maintenant prêt à être téléversé sur le ESP8266. 
+                                        Vous devez au préalable avoir installé <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE</a> ainsi que <a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide" target="_blank">la bibliothèque du ESP8266</a> pour l'utiliser.
+                                    </p>
+                                    <figure><img class="img-responsive" src="assets/images/Chargement_Fichier.png" alt="Diagramme de flux" />
+								        <figcaption>Téléversement du programme dans le esp8266</figcaption>
+								    </figure>
+                                    <p>Afin de téléverser le programme, vous devez connecter le module communication USB avec le esp8266 et votre ordinateur. Lorsque la connexion est établie, vous devez appuyer et maintenir le bouton de gauche (GPI0) et ensuite appuyer sur le bouton de droite (RESET). Si la lumière bleue s'éteint, alors le esp8266 est prêt au téléversement. Si la lumière bleue est toujours visible, vous devez recommencer le processus.</p>
+								    <p>Lorsque le esp8266 est connecté, vous pouvez téléverser le programme sur le esp8266 à l'aide de l'environnement de développement de Arduino. Cette étape peut prendre quelques minutes. Lorsque le logiciel indique que le téléversement est terminé, vous pouvez déconnecter le esp8266 du module USB.</p>
+                                    
+                                </div><!--//section-block - Section Téléversement du code-->
+                                <div id="demarrage-webapp" class="section-block">
+                                    <h3 class="block-title">Démarrage de l'application web</h3>
+                                    <p>Pour démarrer l'application web, vous devez vous dirigez dans le sous-dossier "WebApp" du dossier principal "Smarty-light". Une fois à l'intérieur, ouvrez un terminal Git Bash.</p>
+                                    <p>Entrez la commande suivante afin de vous assurez d'avoir tous les modules installés: </p>
+                                    <pre class=" language-git"><code class=" language-git"><span class="token command">npm install</span></code></pre>  
+                                    <p>Pour démarrer l'application, entrez la commande suivante:</p>
+                                    <pre class=" language-git"><code class=" language-git"><span class="token command">npm start</span></code></pre>  
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Attention..</h4>
+                                            <p>Assurez-vous d'avoir bien démarré le serveur avant de procéder au démarrage de l'application Web. Dans le cas échéant, vous obtiendrez une erreur de port en utilisation en démarrant le serveur, puisque l'application web utilise le port 3000 par défaut.</p>
+                                        </div><!--//content-->
+                                    </div>
+                                    <figure><img class="img-responsive" src="assets/images/Start_WebApp.png" alt="Démarrage de l'application web" />
+								        <figcaption>Démarrage de l'application web</figcaption>
+								    </figure>
+                                    <p>Une fois la commande lancée, le serveur web démarrera et votre navigateur web par défaut devrait s'ouvrir avec l'application web. 
+                                        Si elle ne s'ouvre pas automatiquement, naviguez à l'url "localhost:3001".</p>
+                                    <figure><img class="img-responsive" src="assets/images/WebApp.png" alt="Application web" />
+								        <figcaption>Application web démarrée avec succès!</figcaption>
+								    </figure>
+                                    
+                                </div><!--//section-block - Démarrage Web-App -->
+                                <div id="emulation-client" class="section-block">
+                                    <h3 class="block-title">Émulation d'une ampoule pour tester l'application et le serveur</h3>
+                                    <p>Afin de tester l'application avant d'avoir réalisé l'ampoule, nous avons mis en place une application qui émule la connexion d'une ampoule.
+                                        Avec cet émulateur, il est possible de simuler comment réagirait l'application avec un bon nombre d'ampoules.</p>
+                                    <p>Pour simuler une ampoule, rendez-vous dans le sous-dossier "Client" du dossier principal "Smarty-light" et démarrez un terminal Git Bash.</p>
+                                    <p>Entrez la commande suivante pour démarrer le client, qui simulera l'interraction d'une ampoule avec le serveur:</p>
+                                    <pre class=" language-git"><code class=" language-git"><span class="token command">node client.js</span></code></pre>  
+                                    <p>Si le serveur est bien démarré, vous devriez voir le client s'y connecter.</p>
+                                    <figure><img class="img-responsive" src="assets/images/Client_connecte.png" alt="Connexion du client avec le serveur" />
+								        <figcaption>Connexion du client avec le serveur</figcaption>
+								    </figure>
+                                    <p>Vous devriez maintenant voir l'ampoule simulée via l'application web.</p>
+                                    <figure><img class="img-responsive" src="assets/images/Client_connecte.png" alt="Connexion du client avec le serveur" />
+								        <figcaption>Connexion du client avec le serveur</figcaption>
+								    </figure>
+                                    <figure><img class="img-responsive" src="assets/images/Ampoule_simulee.png" alt="Interraction de l'ampoule simulée avec l'application web" />
+								        <figcaption>Interraction de l'ampoule simulée avec l'application web</figcaption>
+								    </figure>
+                                </div><!--//section-block - Émulation client -->
+
+                        </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+                                <li>
+                                    <a class="scrollto" href="#reproduire-ampoule">Ampoule et circuit</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#preparation-fabrication">Préparation à la fabrication</a></li>
+                                        <li><a class="scrollto" href="#construction-ampoule">Construction de l'ampoule</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#logiciel">Partie logicielle</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#recuperer-code">Téléchargement de notre code source</a></li>
+                                        <li><a class="scrollto" href="#preparation-serveur">Préparation et démarrage du serveur</a></li>
+                                        <li><a class="scrollto" href="#televerser-esp8266">Préparation et téléversement du code vers le ESP8266</a></li>
+                                        <li><a class="scrollto" href="#demarrage-webapp">Démarrage de l'application web</a></li>
+                                        <li><a class="scrollto" href="#emulation-client">Émulation d'une ampoule pour tester l'application et le serveur</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>                                                                 
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+
