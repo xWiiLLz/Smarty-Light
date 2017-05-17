@@ -286,7 +286,344 @@
                                                 <a href="https://fr.wikipedia.org/wiki/Convertisseur_Buck">Convertisseur buck - Wikipédia</a></p>
 								</div>
 							</section><!--//doc-section-->
-                                
+                            <section id="informatique" class="doc-section">
+                                <h2 class="section-title">Informatique</h2>
+								<p>Dans cette section, nous allons expliquer en détails le fonctionnement du code source des différentes parties du projet.
+								<div id="micro-controleur" class="section-block">
+                                    <h3 class="block-title">Programmation du micro-contrôleur (ESP8266)</h3>
+									<p>Le code source du micro-contrôleur lui permet, une fois qu'il s'est connecté au réseau WiFi, de se connecter au serveur 
+                                        via un socket web (utilisation de la librairie SocketIO) et d'assigner les données qu'il y reçoit (valeurs Rouges, Vertes et Bleues)
+                                         aux pins responsables de contrôler le rouge, le vert et le bleu.
+                                    </p>
+                                    <h4>Fonction Setup()</h4>
+                                    <p>Commencons par jeter un coup d'oeil à la fonction Setup() qui est appelée au démarrage:</p>
+                                    <pre class="language-cpp"><code class="language-cpp">void setup() {
+    USE_SERIAL.begin(115200);
+    USE_SERIAL.setDebugOutput(true);
+    USE_SERIAL.println();
+    USE_SERIAL.println();
+    USE_SERIAL.println();
+      for(uint8_t t = 4; t > 0; t--) {
+          USE_SERIAL.printf("[SETUP] BOOT WAIT %d...\n", t);
+          USE_SERIAL.flush();
+          delay(1000);
+
+      }
+    WiFiMulti.addAP(ssid, password);
+    while(WiFiMulti.run() != WL_CONNECTED) {
+        delay(100);
+    }
+    webSocket.on("Data", event);
+
+    //On se connect au webSocket
+    webSocket.begin(host, port);
+
+    //Initialisation des pins pour la LED
+    pinMode(redPin, OUTPUT);
+    pinMode(greenPin, OUTPUT);
+    pinMode(bluePin, OUTPUT);
+}</code></pre>
+                                <p>La première partie importante est l'ajout du point d'accès réseau pour s'y connecter. 
+                                    La fonction addAP(ssid,password) qui est fournie dans la librairie ESP8266WiFiMulti permet de se connecter au réseau WiFi:</p>
+                                    <pre class="language-cpp"><code class="language-cpp">WiFiMulti.addAP(ssid, password);</code></pre>
+                                <p>La boucle qui suit permet de s'assurer que l'on soit connecté au réseau. Si on ne l'est pas, on ajoute un délai au temps de démarrage et on attend d'y être connecté:</p>
+                                <pre class="language-cpp"><code class="language-cpp">while(WiFiMulti.run() != WL_CONNECTED) {
+    delay(100);
+}</code></pre>
+                                <p>Ensuite, l'instance de la classe SocketIoClient définie globalement nous permet d'assigner une fonction "event" lorsque le socket reçoit l'événement "Data":</p>
+                                <pre class="language-cpp"><code class="language-cpp">webSocket.on("Data", event);</code></pre>
+                                <p>On peut alors se connecter au websocket à l'adresse du serveur avec la fonction suivante:</p>
+                                <pre class="language-cpp"><code class="language-cpp">webSocket.begin(host, port);</code></pre>
+                                <p>Les dernières lignes de code de la fonction Setup() servent à initialiser les pins des différentes DELs en mode output:</p>
+                                <pre class="language-cpp"><code class="language-cpp">pinMode(redPin, OUTPUT);
+pinMode(greenPin, OUTPUT);
+pinMode(bluePin, OUTPUT);</code></pre>
+                                <h4>Fonction qui gère l'événement reçut pas le socket - event(const char * payload, size_t length)</h4>
+                                <p>Maintenant, attardons-nous à la fonction qui gère l'événement reçus par le socket:</p>
+                                <pre class="language-cpp"><code class="language-cpp">void event(const char * payload, size_t length) {
+  String string(payload);
+  int commaIndex = string.indexOf(',');
+  //  On cherche la prochaine virgule après la première
+  int secondCommaIndex = string.indexOf(',', commaIndex + 1);
+
+  redValue = string.substring(0, commaIndex).toInt();
+  greenValue = string.substring(commaIndex+1, secondCommaIndex).toInt();
+  blueValue = string.substring(secondCommaIndex+1).toInt();
+  USE_SERIAL.printf("got message: %s\n", payload);
+  USE_SERIAL.printf("red =  %d\n", redValue);
+  USE_SERIAL.printf("green =  %d\n", greenValue);
+  USE_SERIAL.printf("blue =  %d\n", blueValue);
+}</code></pre>
+                                <p>La définition de fonction est la manière dont un événement doit être redéfinit, selon la documentation de SocketIO. 
+                                    Un string est instancié avec le contenu du payload ( <code class="language-cpp">String string(payload);</code> ), pour pouvoir utiliser les fonctions qui sont natives à la librairie String.
+                                    Les données reçues ont la forme suivante: "Rouge,Vert,Bleu". Par exemple, si on recevait les données suivantes par le socket: "100,20,300", 
+                                    nous devons être en mesure de récupérer les 3 nombres dans les variables différentes "redValue", "greenValue" et "blueValue".
+                                    Pour se faire, nous allons récupérer les index des virgules dans la variable string:</p>
+                                    <pre class="language-cpp"><code class="language-cpp">int commaIndex = string.indexOf(',');
+//  On cherche la prochaine virgule après la première
+int secondCommaIndex = string.indexOf(',', commaIndex + 1);</code></pre>
+                                <p>Maintenant que nous connaissons les numéros d'indice des virgules, nous pouvons utiliser la fonction <strong>substring</strong> pour récupérer les valeurs dans les trois variables distinctes:</p>
+                                <pre class="language-cpp"><code class="language-cpp">redValue = string.substring(0, commaIndex).toInt();
+greenValue = string.substring(commaIndex+1, secondCommaIndex).toInt();
+blueValue = string.substring(secondCommaIndex+1).toInt();</code></pre>
+                                <p>Les dernières lignes de la fonction sont seulement des témoins dans le port série, utiles pour le déboguage.</p>
+                                </div><!--//section-block-->
+                                <div id="api" class="section-block">
+                                    <h3 class="block-title">Serveur - Interface de programmation d'application (API)</h3>
+                                    <p>Le serveur effectue le lien entre l'application web qui permet de contrôler les ampoules, ainsi que les ampoules mêmes.</p>
+                                    <p>Nous allons réviser en détails les parties importantes. Commençons par le fichier Server.js. Les lignes suivantes ne servent qu'à authentifier et gérer les en-têtes de requêtes:</p>
+                                    <pre class="language-javascript"><code class="language-javascript">app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors({origin: null}));
+
+app.use((req, res, next) => {
+            // Set permissive CORS header - this allows this server to be used only as
+            // an API server in conjunction with something like webpack-dev-server.
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+
+            // Disable caching so we'll always get the latest comments.
+            res.setHeader('Cache-Control', 'no-cache');
+            next();
+});</code></pre>                
+                                <p>Pour en apprendre plus sur les contrôles d'accès HTTP et CORS, vous pouvez <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank">visiter cette page</a>.</p>
+                                <p>La ligne suivante permet d'inclure le fichier de définition des routes, ainsi que de déclarer les variables globales :</p>
+                                <pre class="language-javascript"><code class="language-javascript">require('./routes/routes-config')(app);
+var allSockets = [];
+app.lightbulbs = [];
+var uniqueID = 0;</code></pre>
+                                <p>Nous reviendrons sur les routes plus en détails par la suite. Attaquons maintenant le gros morceau, qui est ce qui se produit lorsqu'un socket se connecte:</p>
+                                <pre class="language-javascript"><code class="language-javascript">app.io.on('connection', function (socket){
+console.log('connection', socket.id);
+allSockets.push(socket); //On ajoute l'ampoule qui se connecte à la liste
+
+// On assigne un ID à l'ampoule qui vient de se connecter
+
+var lightbulbID = generateID();   //On lui donne un id
+console.log('Ajout de l\'ampoule avec l\'ID:', socket.id);
+
+// On récupère l'adresse ip
+var clientIp = socket.request.connection.remoteAddress;
+var clientPort = socket.request.connection.remotePort;
+
+// On extrait les caractères ::ffff: ipv6 pour récupérer seulement ipv4
+var idx = clientIp.lastIndexOf(':');
+if (~idx && ~clientIp.indexOf('.'))
+{
+    clientIp = clientIp.slice(idx + 1);
+}
+console.log('Nouvelle connexion depuis ' + clientIp + ":" + clientPort);
+app.lightbulbs.push({id: lightbulbID,
+        socketID: socket.id,
+        red: 0,
+        green: 0,
+        blue: 0,
+        ip: clientIp,
+        port: clientPort
+                
+});
+
+// Event handler de déconnexion
+socket.on('disconnect', function(){
+    console.log('Socket avec le ID #', socket.id, ' déconnecté');
+    var i = allSockets.indexOf(socket);
+    allSockets.splice(i, 1);
+
+    var indexLightbulbs = findWithAttr(app.lightbulbs,'id',socket.id);
+    app.lightbulbs.splice(indexLightbulbs,1);
+})
+});</code></pre>
+                                <p>Le tableau "allSockets" contient tous les sockets. On y ajoute donc chaque socket qui se connecte:</p>
+                                <pre class="language-javascript"><code class="language-javascript">allSockets.push(socket); //On ajoute l'ampoule qui se connecte à la liste</code></pre>
+                                <p>On définit ensuite un ID unique à l'aide de la fonction generateID():</p>
+                                <pre class="language-javascript"><code class="language-javascript">var lightbulbID = generateID();   //On lui donne un id</code></pre>
+                                <p>Cette fonction incrémente de 1 un compteur et en retourne la valeur, afin de toujours avoir un identifiant unique.</p>
+                                <pre class="language-javascript"><code class="language-javascript">function generateID(){
+  return uniqueID++;
+}</code></pre>
+                                <p>On récupère ensuite les informations de connexion du socket, notamment son adresse IP et le port de connexion:</p>
+                                <pre class="language-javascript"><code class="language-javascript">var clientIp = socket.request.connection.remoteAddress;
+var clientPort = socket.request.connection.remotePort;
+</code></pre>
+                                <p>Étant donné que l'adresse ip retournée par la connexion socket est en format ipv6 ("::ffff:192.168.2.1", on y retire les caractères suivant les deux points ':' :</p>
+                                <pre class="language-javascript"><code class="language-javascript">var idx = clientIp.lastIndexOf(':');
+if (~idx && ~clientIp.indexOf('.'))
+{
+    clientIp = clientIp.slice(idx + 1);
+}</code></pre>
+                                <p>On recueille les informations de chaque ampoule (socket) dans un tableau, la variable "app.lightbulbs". On y ajoute donc l'ampoule qui vient d'être connectée :</p>
+                                <pre class="language-javascript"><code class="language-javascript">app.lightbulbs.push({id: lightbulbID,
+        socketID: socket.id,
+        red: 0,
+        green: 0,
+        blue: 0,
+        ip: clientIp,
+        port: clientPort
+                
+});</code></pre>
+                                <p>La dernière fonction qui est présente dans ce bloc est l'événement de déconnexion. 
+                                    Il s'assure qu'on retire l'ampoule et le socket des tableaux allSockets et app.lightbulbs :</p>
+                                    <pre class="language-javascript"><code class="language-javascript">socket.on('disconnect', function(){
+    console.log('Socket avec le ID #', socket.id, ' déconnecté');
+    var i = allSockets.indexOf(socket);
+    allSockets.splice(i, 1);
+
+    var indexLightbulbs = findWithAttr(app.lightbulbs,'id',socket.id);
+    app.lightbulbs.splice(indexLightbulbs,1);
+  });</code></pre>
+                                <p>Vous remarquerez l'utilisation de la fonction finWithAttr(tableau, attribut, valeur). 
+                                    Cette dernière vérifie si un élément du tableau contient l'attribut avec la valeur passée en argument.
+                                    Si l'objet a bien la valeur à cet attribut, la fonction renvoie son indice au tableau. Sinon, elle renvoie -1. 
+                                    Voici le code de cette fonction, qui se trouve dans le fichier "misc_functions.js" du sous-dossier "functions":</p>
+                                <pre class="language-javascript"><code class="language-javascript">function findWithAttr(array, attr, value) {
+    for(var i = 0; i < array.length; i ++) {
+        value = parseInt(value, 10);
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+module.exports.findWithAttr = findWithAttr;</code></pre>
+                                <p>La dernière partie du fichier Server.js permet d'initialiser l'écoute du serveur sur le port 3000, 
+                                    permettant ainsi de recevoir des requêtes HTTP qui seront configurées dans le fichier routes-config.js :</p>
+                                <pre class="language-javascript"><code class="language-javascript">http.listen(3000, function () {
+  console.log('À l\'écoute sur le port *:3000');
+});</code></pre>
+                                <p>Revenons maintenant au fichier routes-config.js qui était appelée par l'application au début du fichier Server.js : </p>
+                                <pre class="language-javascript"><code class="language-javascript">var lightsRouter    = require('./lights');
+
+function routesConfig(app){
+    app.use('/lights', lightsRouter);
+}
+
+module.exports=routesConfig;</code></pre>
+                                <p>Cette fonction permet de définir la route "/lights" avec la variable lightsRouter. 
+                                    Cela signifie que les requêtes http envoyées à l'adresse /lights sont définies par le fichier "lights.js" qui se trouve dans le dossier "routes".</p>
+                                <p>Jettons un oeil au fichier "lights.js" :</p>
+                                <pre class="language-javascript"><code class="language-javascript">var express     = require('express');
+var router      = express.Router();
+var findWithAttr  = require('../functions/misc_functions').findWithAttr;
+const util = require('util');
+
+router.post('/',function(req,res){
+    console.log("Requête POST reçu");
+    console.log(req.body);
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+    var red = req.body.red;
+    var green = req.body.green;
+    var blue = req.body.blue; 
+    if(req.body.id!=null)
+    {
+        
+        console.log(req.app.lightbulbs);
+        var id = req.body.id;
+        if(req.app.lightbulbs)
+        {
+            var indexLightbulbs = findWithAttr(req.app.lightbulbs,'id',id);
+            if(indexLightbulbs>=0)
+            {
+                var socketID = req.app.lightbulbs[indexLightbulbs].socketID;
+                req.app.io.sockets.connected[socketID].emit('Data', red, green, blue);
+                req.app.lightbulbs[indexLightbulbs].red = red;
+                req.app.lightbulbs[indexLightbulbs].green = green;
+                req.app.lightbulbs[indexLightbulbs].blue = blue;
+                res.send("Succès!");
+            }
+            else
+            {
+                res.send("Il n'y a aucune ampoule avec l'ID #" + id);
+            }
+        }
+    }
+    else
+    {
+        //On modifie toutes les ampoules
+        console.log("Requête -- Rouge:" + red + " Vert:" + green + " Bleu:" + blue);
+        if((red >=0 && red <=1024) && (green >=0 && green <=1024) && (blue >=0 && blue <=1024))
+        {
+            req.app.io.sockets.emit('Data', red, green, blue);
+            req.app.lightbulbs.forEach(function(element) {
+                element.red = red;
+                element.green = green;
+                element.blue = blue;
+            }, this);
+            res.send("Succès!");
+        }
+        else
+        {
+            res.send("Veuillez entrer des valeurs entre 0 et 1024 pour les attributs 'red', 'green' et 'blue'.");
+        }
+    }
+});
+
+router.get('/',function(req,res){
+    //On ajoute les header de response pour permettre
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+    res.send(req.app.lightbulbs);
+    /*console.log('Requête Get reçu...');
+    console.log(req.app.lightbulbs);*/
+});
+
+//Route pour trouver acquérir l'information d'une ampoule unique
+router.get('/unique/:id',function(req,res){
+    
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+    if(req.params.id!=null)
+    {
+    var id = req.params.id;
+        if(req.app.lightbulbs)
+        {
+            var tempLightbulbs = req.app.lightbulbs;
+            var indexLightbulbs = findWithAttr(tempLightbulbs,'id',id);
+            if(indexLightbulbs>=0)
+            {
+                // On renvoie l'ampoule unique trouvée;
+                res.send(req.app.lightbulbs[indexLightbulbs]);
+            }
+            else
+            {
+                res.send(null);
+                console.log("Index de lightbulb = ", indexLightbulbs);
+                console.log(util.inspect(req.app.lightbulbs[indexLightbulbs], false, null))
+            }
+        }
+        else{
+            console.log("Erreur..");
+        }
+    }
+    else
+    {
+        res.send("ID nul");
+    }
+});
+
+module.exports=router;</code></pre>
+                                <p>Vous remarquerez que le fichier est séparé en 3 fonctions distinctes : 
+                                    <ol>
+                                        <li><pre class="language-javascript"><code class="language-javascript">router.post('/',function(req,res){});</code></pre>
+                                            <p>Cette fonction définie ce qui se produit lorsque le serveur reçoit une requête POST à l'url '/' de '/lights', donc à l'adresse 'localhost:3000/lights/'.
+                                                La requête post doit contenir un corps JSON avec les variables body.red, body.green et body.blue. 
+                                                Optionnellement, le corps peut contenir la variable body.id. Si la requête contient la variable body.id, les valeurs des variables assignées aux trois couleurs seront envoyées seulement à l'ampoule avec cet identifiant unique (ID).
+                                                Sinon, les valeurs des trois couleurs seront envoyées à tous les sockets, c'est-à-dire qu'ils changeront la couleur et l'intensité de chaque ampoule.
+                                            </p>
+                                        </li>
+                                        <li><pre class="language-javascript"><code class="language-javascript">router.get('/',function(req,res){});</code></pre></li>
+                                        <p>Cette fonction est assez simple. Lorsqu'une requête GET est reçue à la route '/lights/', le serveur renvoie le tableau app.lightbulbs, qui contient les informations sur toutes les ampoules.</p>
+                                        <li><pre class="language-javascript"><code class="language-javascript">router.get('/unique/:id',function(req,res){});</code></pre></li>
+                                        <p>Cette fonction contient une route avec paramètre variable. La notation :id représente un paramètre de requête variable. 
+                                            Elle prend place à l'adresse '/unique/:id', qui est relative à la route de base '/lights'. L'adresse complète de cette route est donc 'localhost:3000/lights/unique/:id', o&ugrave; id est un nombre variable.</p>
+                                            
+                                    </ol>
+                                </p>
+                                </div><!--//section-block-->
+</section><!--//doc-section-->
                             
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
@@ -299,6 +636,12 @@
                                         <li><a class="scrollto" href="#del">DELs</a></li>
                                         <li><a class="scrollto" href="#transistors">Transistors</a></li>
                                         <li><a class="scrollto" href="#convertisseur-buck">Convertisseur buck</a></li>
+                                    </ul><!--//nav-->
+								</li>
+                                <li><a class="scrollto" href="#informatique">Informatique</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#micro-controleur">Micro-contrôleur (ESP8266)</a></li>
+                                        <li><a class="scrollto" href="#api">Serveur (API)</a></li>
                                     </ul><!--//nav-->
 								</li>
                             </ul><!--//doc-menu-->

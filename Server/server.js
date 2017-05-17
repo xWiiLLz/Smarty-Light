@@ -21,7 +21,7 @@ app.use((req, res, next) => {
             // Disable caching so we'll always get the latest comments.
             res.setHeader('Cache-Control', 'no-cache');
             next();
-        });
+});
 
 require('./routes/routes-config')(app);
 
@@ -29,7 +29,6 @@ var allSockets = [];
 app.lightbulbs = [];
 var uniqueID = 0;
 
-//app.lightbulbs=lightbulbs;
 
 app.io.on('connection', function (socket){
    console.log('connection', socket.id);
@@ -38,7 +37,7 @@ app.io.on('connection', function (socket){
   // On assigne un ID à l'ampoule qui vient de se connecter
   
    var lightbulbID = generateID();   //On lui donne un id
-   console.log('Added lightbulb with id:', socket.id);
+   console.log('Ajout de l\'ampoule avec l\'ID:', socket.id);
 
    // On récupère l'adresse ip
   var clientIp = socket.request.connection.remoteAddress;
@@ -50,7 +49,7 @@ app.io.on('connection', function (socket){
   {
     clientIp = clientIp.slice(idx + 1);
   }
-  console.log('New connection from ' + clientIp);
+  console.log('Nouvelle connexion depuis ' + clientIp + ":" + clientPort);
    app.lightbulbs.push({id: lightbulbID,
                     socketID: socket.id,
                     red: 0,
@@ -63,13 +62,13 @@ app.io.on('connection', function (socket){
 
   // Event handler de déconnexion
   socket.on('disconnect', function(){
-    console.log('Socket with id #', socket.id, ' disconnected');
+    console.log('Socket avec le ID #', socket.id, ' déconnecté');
     var i = allSockets.indexOf(socket);
     allSockets.splice(i, 1);
 
     var indexLightbulbs = findWithAttr(app.lightbulbs,'id',socket.id);
     app.lightbulbs.splice(indexLightbulbs,1);
-  })
+  });
 });
 
 
@@ -80,12 +79,3 @@ http.listen(3000, function () {
 function generateID(){
   return uniqueID++;
 }
-
-/*function findWithAttr(array, attr, value) {
-    for(var i = 0; i < array.length; i += 1) {
-        if(array[i][attr] === value) {
-            return i;
-        }
-    }
-    return -1;
-}*/

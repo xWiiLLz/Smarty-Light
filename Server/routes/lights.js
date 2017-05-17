@@ -4,7 +4,7 @@ var findWithAttr  = require('../functions/misc_functions').findWithAttr;
 const util = require('util');
 
 router.post('/',function(req,res){
-    console.log("GOT POST REQ");
+    console.log("Requête POST reçu");
     console.log(req.body);
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
@@ -38,7 +38,7 @@ router.post('/',function(req,res){
     else
     {
         //On modifie toutes les ampoules
-        console.log("Requête -- Red:" + red + " Green:" + green + " Blue:" + blue);
+        console.log("Requête -- Rouge:" + red + " Vert:" + green + " Bleu:" + blue);
         if((red >=0 && red <=1024) && (green >=0 && green <=1024) && (blue >=0 && blue <=1024))
         {
             req.app.io.sockets.emit('Data', red, green, blue);
@@ -90,12 +90,12 @@ router.get('/unique/:id',function(req,res){
             }
         }
         else{
-            console.log("ERURURURURURU");
+            console.log("Erreur..");
         }
     }
     else
     {
-        res.send("Null id");
+        res.send("ID nul");
     }
 });
 

@@ -27,7 +27,7 @@ ESP8266WiFiMulti WiFiMulti;
 const char* ssid     = "======Changez pour votre nom de réseau Wifi======";
 const char* password = "======Changez pour votre mot de passe Wifi======";
 
-//Diclaration du client Socket.IO
+//Déclaration du client Socket.IO
 SocketIoClient webSocket;
 //Variables Socket.IO
 const char* host = "192.168.1.100";// Remplacez par votre valeur
@@ -41,7 +41,7 @@ int redValue, greenValue, blueValue;
 void event(const char * payload, size_t length) {
   String string(payload);
   int commaIndex = string.indexOf(',');
-  //  Search for the next comma just after the first
+  //  On cherche la prochaine virgule après la première
   int secondCommaIndex = string.indexOf(',', commaIndex + 1);
 
   redValue = string.substring(0, commaIndex).toInt();
