@@ -23,7 +23,7 @@ export class LightbulbControllerComponent implements OnInit {
     goBack(): void{
         this.location.back();
     }
-    
+    applyToAll: boolean = false;
 
     getLightbulb(): void{
         this.route.params
@@ -36,6 +36,13 @@ export class LightbulbControllerComponent implements OnInit {
             2000);
     }
     onChange(newValue: number) {
-        this.lightbulbService.postLightbulb(this.lightbulb.id, this.lightbulb.red, this.lightbulb.green, this.lightbulb.blue);
+        if(this.applyToAll)
+        {
+            this.lightbulbService.postLightbulb(null, this.lightbulb.red, this.lightbulb.green, this.lightbulb.blue);
+        }
+        else
+        {
+            this.lightbulbService.postLightbulb(this.lightbulb.id, this.lightbulb.red, this.lightbulb.green, this.lightbulb.blue);
+        }
     }
 }

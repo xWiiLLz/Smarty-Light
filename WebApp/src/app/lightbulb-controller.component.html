@@ -24,6 +24,16 @@
             </fieldset>  
         </li>
     </ul>
-
-
+    <div class="[ form-group ]">
+        <input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" [(ngModel)]="applyToAll"/>
+        <div class="[ btn-group ]">
+            <label for="fancy-checkbox-default" class="[ btn btn-default ]">
+                <span class="[ glyphicon glyphicon-ok ]"></span>
+                <span> </span>
+            </label>
+            <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+             Appliquer le choix à toutes les ampoules
+            </label>
+        </div>
+    </div>
 </div>
